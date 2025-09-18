@@ -10,87 +10,121 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <!-- Шапка сайта -->
-         <header>
-            <a href="/">Логотип или название сайта</a>
+    <div class="content-wrapper">
+        <!-- Шапка сайта -->
+        <header>
+            <a href="/">KIKO</a>
             <!-- Главное меню навигации -->
-             <nav>
+            <nav>
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html" class="activePage">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
         </header>
-    
-    <!-- Уникальное основное содержимое страницы -->
-         <main>
+
+        <!-- Уникальное основное содержимое страницы -->
+        <main>
             <h1>Добро пожаловать на наш сайт!</h1>
-            
+            <p>Мы очень рады приветствовать вас на сайте самой лучшей галереи Москвы!</p>
+
+            <!-- Контейнер для гифки -->
+            <div class="gif-container">
+                <img src="../assets/12.gif" alt="Анимированная гифка">
+            </div>
+
             <!-- Секция 1 с якорем -->
-             <section id="services">
-                <h2>Наши услуги</h2>
-                <p>Описание предоставляемых услуг...</p>
-                <a href="#contacts">Связаться с нами</a>
+            <section id="services">
+                <h2>Наши услуги...</h2>
+                <a href="contacts.html">Связаться с нами</a>
             </section>
-            
+
             <!-- Секция 2 с якорем -->
             <section id="portfolio">
                 <h2>Портфолио</h2>
-                <p>Примеры наших работ...</p>
+                <p>Примеры наших работ</p>
+                <img src="../assets/0c18c2de735d97ddba827c9c250bf5ca.webp" alt="First_ship" width="100" height="100">
+                <img src="../assets/a47d85f44ce7c26d5cad3d6852cea6a7.webp" alt="Second_ship" width="100" height="100">
+                <img src="../assets/i.webp" alt="Third_ship" width="100" height="100">
             </section>
-        
-        <!-- Секция 3 с якорем -->
+
+            <!-- Секция 3 с якорем -->
             <section id="contacts">
                 <h2>Контактная информация</h2>
                 <p>Наши контакты...</p>
                 <a href="contacts.html">Подробнее</a>
             </section>
         </main>
-    
-    <!-- Подвал сайта -->
+
+        <!-- Подвал сайта -->
         <footer>
             <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
             <p>Телефон: +7 (123) 456-78-90</p>
         </footer>
+    </div>
 
-    <!-- Кнопка открытия модалки -->
-        <button id="openDialog" type="button">Написать нам</button>
+    <!-- Кнопка и диалог -->
+    <button id="openDialog" type="button">Написать нам</button>
     
-    <!-- Модалка с формой -->
-    <dialog id="contactDialog" aria-labelledby="dialogTitle">
-        <h2 id="dialogTitle">Обратная связь</h2>
-        <form id="contactForm" method="dialog" novalidate>
-            <label for="name">Имя</label>
-            <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+    <dialog id="contactDialog" aria-labelledby="dialogTitle"> 
+        <h2 id="dialogTitle">Обратная связь</h2> 
+        <form id="contactForm" method="dialog" novalidate> 
+            <label for="name">Имя</label> 
+            <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name"> 
             
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" required autocomplete="email">
+            <label for="email">E-mail</label> 
+            <input id="email" name="email" type="email" required autocomplete="email"> 
             
-            <label for="phone">Телефон</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
-                   aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required 
-                   pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+            <label for="phone">Телефон</label> 
+            <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" 
+                aria-describedby="phoneHelp" placeholder="+7 (___) ___--" 
+                required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" pattern="[0-9]*" oninput="this.value = this.value.replace(/[eE+-]/g, '');" > 
             <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
             
-            <label for="date">Дата</label>
-            <input id="date" name="date" type="date">
+            <label for="date">Дата</label> 
+            <input id="date" name="date" type="date"> 
             
-            <label for="topic">Тема</label>
-            <select id="topic" name="topic" required>
-                <option value="">Выберите тему</option>
-                <option value="question">Вопрос</option>
-                <option value="order">Заказ</option>
-            </select>
+            <label for="topic">Тема</label> 
+            <select id="topic" name="topic" required> 
+                <option value="">Выберите тему</option> 
+                <option>Вопрос</option> 
+                <option>Заказ</option> 
+            </select> 
             
-            <label for="message">Сообщение</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message">Сообщение</label> 
+            <textarea id="message" name="message" rows="4" required></textarea> 
             
-            <div class="form-actions">
-                <button type="button" id="closeDialog">Закрыть</button>
-                <button type="submit">Отправить</button>
-            </div>
-        </form>
+            <div class="form-actions"> 
+                <button type="button" id="closeDialog">Закрыть</button> 
+                <button type="submit">Отправить</button> 
+            </div> 
+        </form> 
     </dialog>
+
+> вероника:
+<script>
+        // Базовая логика для диалогового окна
+        document.addEventListener('DOMContentLoaded', function() {
+            const dialog = document.getElementById('contactDialog');
+            const openButton = document.getElementById('openDialog');
+            const closeButton = document.getElementById('closeDialog');
+            const form = document.getElementById('contactForm');
+
+            openButton.addEventListener('click', () => {
+                dialog.showModal();
+            });
+
+            closeButton.addEventListener('click', () => {
+                dialog.close();
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Форма отправлена!');
+                dialog.close();
+            });
+        });
+    </script>
 </body>
 </html>
