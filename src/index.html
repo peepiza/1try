@@ -31,7 +31,7 @@
 
             <!-- Контейнер для гифки -->
             <div class="gif-container">
-                <img src="../assets/animation.gif.gif" alt="Анимированная гифка">
+                <img src="assets/animation.gif" alt="Анимированная гифка">
             </div>
 
             <!-- Секция 1 с якорем -->
@@ -77,9 +77,9 @@
             <input id="email" name="email" type="email" required autocomplete="email"> 
             
             <label for="phone">Телефон</label> 
-            <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" 
-                aria-describedby="phoneHelp" placeholder="+7 (___) ___--" 
-                required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" pattern="[0-9]*" oninput="this.value = this.value.replace(/[eE+-]/g, '');" > 
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" 
+                aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" 
+                required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"> 
             <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
             
             <label for="date">Дата</label> 
@@ -88,8 +88,8 @@
             <label for="topic">Тема</label> 
             <select id="topic" name="topic" required> 
                 <option value="">Выберите тему</option> 
-                <option>Вопрос</option> 
-                <option>Заказ</option> 
+                <option value="question">Вопрос</option> 
+                <option value="order">Заказ</option> 
             </select> 
             
             <label for="message">Сообщение</label> 
@@ -101,28 +101,37 @@
             </div> 
         </form> 
     </dialog>
+
 <script>
-        // Базовая логика для диалогового окна
-        document.addEventListener('DOMContentLoaded', function() {
-            const dialog = document.getElementById('contactDialog');
-            const openButton = document.getElementById('openDialog');
-            const closeButton = document.getElementById('closeDialog');
-            const form = document.getElementById('contactForm');
+// Базовая логика для диалогового окна
+document.addEventListener('DOMContentLoaded', function() {
+    const dialog = document.getElementById('contactDialog');
+    const openButton = document.getElementById('openDialog');
+    const closeButton = document.getElementById('closeDialog');
+    const form = document.getElementById('contactForm');
 
-            openButton.addEventListener('click', () => {
-                dialog.showModal();
-            });
+    openButton.addEventListener('click', () => {
+        dialog.showModal();
+    });
 
-            closeButton.addEventListener('click', () => {
-                dialog.close();
-            });
+    closeButton.addEventListener('click', () => {
+        dialog.close();
+    });
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Форма отправлена!');
-                dialog.close();
-            });
-        });
-    </script>
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Проверка валидности формы
+        if (form.checkValidity()) {
+            alert('Форма отправлена!');
+            form.reset();
+            dialog.close();
+        } else {
+            // Показываем сообщения об ошибках
+            form.reportValidity();
+        }
+    });
+});
+</script>
 </body>
 </html>
