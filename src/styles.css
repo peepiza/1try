@@ -2,6 +2,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; }
+
 /* Формы: размеры, отступы, визуальный порядок */ 
 label { display: block; margin: 0.5rem 0 0.25rem; } 
 input, select, textarea, button {
@@ -12,6 +13,7 @@ input, select, textarea, button {
     border-radius: 8px; 
     background: #fff;
 }
+
 /* Кнопка по умолчанию */ 
 button, [type="submit"] {
     background: #0a84ff; 
@@ -19,12 +21,45 @@ button, [type="submit"] {
     border: none; 
     cursor: pointer;
 }
+
 /* Состояния: клавиатура/мышь/ошибки */
 :where(input, select, textarea, button):focus-visible {
-    outline: 2px solid #0a84ff; outline-offset: 2px; 
+    outline: 2px solid #0a84ff; 
+    outline-offset: 2px; 
 }
 button:hover { filter: brightness(0.95); }
 :disabled, [aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
 
-/* Подсветка ошибочных полей (установите aria-invalid="true") */ 
+/* Подсветка ошибочных полей */
 [aria-invalid="true"] { border-color: #b00020; }
+
+/* Стили для модального окна */
+dialog {
+    padding: 1.25rem;
+    border: none;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для формы в модалке */
+.form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+small {
+    color: #666;
+    font-size: 12px;
+    margin-top: -8px;
+    display: block;
+}
