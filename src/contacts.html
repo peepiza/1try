@@ -55,11 +55,6 @@
 
         <!-- Основное содержимое -->
         <main>
-            <!-- Хлебные крошки -->
-            <nav class="breadcrumbs" aria-label="Хлебные крошки">
-                <a href="index.html">Главная</a> →
-                <span>Контакты</span>
-            </nav>
 
             <!-- Заголовок -->
             <section class="hero-section">
@@ -115,25 +110,41 @@
         <!-- Подвал сайта -->
         <footer class="section">
             <p>&copy; 2023 Традиционный бал РТУ МИРЭА. Все права защищены.</p>
-            <p>Телефон: +7 (234) 456-78-99</p>
+            <p>Телефон: +7 (123) 456-78-99</p>
         </footer>
     </div>
 
-    <!-- Кнопка "Написать нам" -->
+       <!-- Кнопка и диалог -->
     <button id="openDialog" type="button">Написать нам</button>
     
-    <!-- Диалоговое окно -->
     <dialog id="contactDialog" aria-labelledby="dialogTitle"> 
         <h2 id="dialogTitle">Обратная связь</h2> 
         <form id="contactForm" method="dialog" novalidate> 
             <label for="name">Имя</label> 
-            <input id="name" name="name" type="text" required minlength="2"> 
+            <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name"> 
             
             <label for="email">E-mail</label> 
-            <input id="email" name="email" type="email" required> 
+            <input id="email" name="email" type="email" required autocomplete="email"> 
+            
+            <label for="phone">Телефон</label> 
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" 
+                aria-describedby="phoneHelp" placeholder="8XXXXXXXXXX" 
+                required pattern="^\8\d{3}\d{3}\d{2}\d{2}$">  
+            <small id="phoneHelp">Формат: 89123456789</small>
+            
+            <label for="date">Дата</label> 
+            <input id="date" name="date" type="date"> 
+            
+            <label for="topic">Тема</label> 
+            <select id="topic" name="topic" required> 
+                <option value="">Выберите тему</option> 
+                <option value="question">Вопрос о бале</option> 
+                <option value="participation">Участие в бале</option> 
+                <option value="volunteer">Волонтерство</option> 
+            </select> 
             
             <label for="message">Сообщение</label> 
-            <textarea id="message" name="message" rows="4" required placeholder="Расскажите о вашем интересе к балу..."></textarea> 
+            <textarea id="message" name="message" rows="4" required></textarea> 
             
             <div class="form-actions"> 
                 <button type="button" id="closeDialog">Закрыть</button> 
@@ -142,25 +153,36 @@
         </form> 
     </dialog>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dialog = document.getElementById('contactDialog');
-        const openButton = document.getElementById('openDialog');
-        const closeButton = document.getElementById('closeDialog');
-        const form = document.getElementById('contactForm');
+<script>
+// Базовая логика для диалогового окна
+document.addEventListener('DOMContentLoaded', function() {
+    const dialog = document.getElementById('contactDialog');
+    const openButton = document.getElementById('openDialog');
+    const closeButton = document.getElementById('closeDialog');
+    const form = document.getElementById('contactForm');
 
-        openButton.addEventListener('click', () => dialog.showModal());
-        closeButton.addEventListener('click', () => dialog.close());
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (form.checkValidity()) {
-                alert('Сообщение отправлено! Мы ответим вам в течение 24 часов.');
-                form.reset();
-                dialog.close();
-            }
-        });
+    openButton.addEventListener('click', () => {
+        dialog.showModal();
     });
-    </script>
+
+    closeButton.addEventListener('click', () => {
+        dialog.close();
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Проверка валидности формы
+        if (form.checkValidity()) {
+            alert('Форма отправлена!');
+            form.reset();
+            dialog.close();
+        } else {
+            // Показываем сообщения об ошибках
+            form.reportValidity();
+        }
+    });
+});
+</script>
 </body>
 </html>

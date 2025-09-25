@@ -55,21 +55,13 @@
             --radius: 12px;
             --shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
         }
-
-        /* Тёмная тема: переопределяем только значения токенов */
-        body.theme-dark {
-            --color-bg: #0b0b0b;
-            --color-fg: #f5f5f5;
-            --color-muted: #aaa;
-            --color-primary: #6aa2ff;
-        }
     </style>
 </head>
 <body>
     <div class="content-wrapper container">
         <!-- Шапка сайта -->
         <header>
-            <a href="/">peepiza</a>
+            <a href="/">Традиционный бал РТУ МИРЭА</a>
             <!-- Главное меню навигации -->
             <nav>
                 <ul>
@@ -139,7 +131,7 @@
         <!-- Подвал сайта -->
         <footer class="section">
             <p>&copy; 2023 танцы. Все права защищены.</p>
-            <p>Телефон: +7 (123) 456-78-90</p>
+            <p>Телефон: +7 (123) 456-78-909</p>
         </footer>
     </div>
 
@@ -157,7 +149,7 @@
             
             <label for="phone">Телефон</label> 
             <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" 
-                aria-describedby="phoneHelp" placeholder="88005553535" 
+                aria-describedby="phoneHelp" placeholder="8XXXXXXXXXX" 
                 required pattern="^\8\d{3}\d{3}\d{2}\d{2}$">  
             <small id="phoneHelp">Формат: 89123456789</small>
             
@@ -167,8 +159,9 @@
             <label for="topic">Тема</label> 
             <select id="topic" name="topic" required> 
                 <option value="">Выберите тему</option> 
-                <option value="question">Вопрос</option> 
-                <option value="order">Заказ</option> 
+                <option value="question">Вопрос о бале</option> 
+                <option value="participation">Участие в бале</option> 
+                <option value="volunteer">Волонтерство</option> 
             </select> 
             
             <label for="message">Сообщение</label> 
