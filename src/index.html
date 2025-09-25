@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная - Традиционный бал РТУ МИРЭА</title>
     <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="../assets/icon1.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
     <style>
         /* Reset-минимум — подробнее в 1.8 */
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background: var(--color-bg);
             color: var(--color-fg);
@@ -22,28 +28,33 @@
         }
 
         /* Центровка и ограничение ширины контейнера */
-        .container { 
-            width: min(100% - 2 * var(--space-4), 1120px); 
-            margin-inline: auto; 
+        .container {
+            width: min(100% - 2 * var(--space-4), 1120px);
+            margin-inline: auto;
         }
-        
+
         /* Вертикальные отступы секций по токенам */
-        .section { 
-            padding-block: var(--space-5); 
+        .section {
+            padding-block: var(--space-5);
         }
-        
-        .section__title { 
-            margin: 0 0 var(--space-3); 
+
+        .section__title {
+            margin: 0 0 var(--space-3);
         }
 
         /* Переменные CSS */
         :root {
-            --color-primary: #1F4A2B;      /* Темно-зеленый */
-            --color-cream: #E4D6C7;        /* Светлый кремовый */
-            --color-beige: #D4C4AE;        /* Бежевый */
-            --color-white: #FFFFFF;        /* Белый */
-            --color-dark: #2C2C2C;         /* Темный текст */
-            
+            --color-primary: #1F4A2B;
+            /* Темно-зеленый */
+            --color-cream: #E4D6C7;
+            /* Светлый кремовый */
+            --color-beige: #D4C4AE;
+            /* Бежевый */
+            --color-white: #FFFFFF;
+            /* Белый */
+            --color-dark: #2C2C2C;
+            /* Темный текст */
+
             /* Типографика и размеры */
             --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
             --space-1: 4px;
@@ -51,13 +62,14 @@
             --space-3: 16px;
             --space-4: 24px;
             --space-5: 40px;
-            
+
             /* Скругления и тени */
             --radius: 12px;
             --shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
         }
     </style>
 </head>
+
 <body>
     <div class="content-wrapper container">
         <!-- Шапка сайта -->
@@ -77,30 +89,27 @@
         <main>
             <h1>Традиционный бал РТУ МИРЭА</h1>
             <h2>"На зачарованном озере"</h2>
-            <p>📜 В этом году приглашаем вас окунуться в сказочный мир, где каждый взмах руки и каждый плавный шаг отражают красоту и драму, а музыка и танец сливаются в утонченную поэму балета.<p>
-            </p>🩰 В этом году атмосфера нашего бала будет окутана зачарованной элегантностью, навеянной постановкой «Лебединое Озеро» — творчеством Петра Ильича Чайковского. 
-                Образовательная программа раскроет перед гостями особенности балета и эпохи великого композитора.</p>
+            <p>📜 В этом году приглашаем вас окунуться в сказочный мир, где каждый взмах руки и каждый плавный шаг
+                отражают красоту и драму, а музыка и танец сливаются в утонченную поэму балета.
+            <p>
+            </p>🩰 В этом году атмосфера нашего бала будет окутана зачарованной элегантностью, навеянной постановкой
+            «Лебединое Озеро» — творчеством Петра Ильича Чайковского.
+            Образовательная программа раскроет перед гостями особенности балета и эпохи великого композитора.</p>
 
             <!-- Контейнер для видео с Rutube -->
             <div class="video-container">
                 <h3>Видео с бала "Веков связующая нить"</h3>
-                <iframe 
-                src="https://rutube.ru/play/embed/034bf71c7aa37ef881e5d21da9d73dbf/" 
-                width="100%" 
-                height="405"
-                style="border: none;"
-                allow="clipboard-write; autoplay; fullscreen" 
-                webkitAllowFullScreen 
-                mozallowfullscreen 
-                allowFullScreen>
-            </iframe>
-            <p style="margin-top: 10px; color: var(--color-muted);">
-                Видео предоставлено Rutube
-            </p>
-        </div>
+                <iframe src="https://rutube.ru/play/embed/034bf71c7aa37ef881e5d21da9d73dbf/" width="100%" height="405"
+                    style="border: none;" allow="clipboard-write; autoplay; fullscreen" webkitAllowFullScreen
+                    mozallowfullscreen allowFullScreen>
+                </iframe>
+                <p style="margin-top: 10px; color: var(--color-muted);">
+                    Видео предоставлено Rutube
+                </p>
+            </div>
 
             <!-- Секция 1 с якорем -->
-             <section id="services" class="section">
+            <section id="services" class="section">
                 <h2 class="section__title">Традиционный бала РТУ МИРЭА - это уже ежегодная традиция!</h2>
                 <div style="text-align: center;">
                     <a href="contacts.html" style="font-weight: 500;">Связаться с нами</a>
@@ -129,82 +138,82 @@
                 </div>
             </section>
 
-        <!-- Подвал сайта -->
-        <footer class="section">
-            <p>&copy; 2023 танцы. Все права защищены.</p>
-            <p>Телефон: +7 (123) 456-78-909</p>
-        </footer>
+            <!-- Подвал сайта -->
+            <footer class="section">
+                <p>&copy; 2023 танцы. Все права защищены.</p>
+                <p>Телефон: +7 (123) 456-78-909</p>
+            </footer>
     </div>
 
     <!-- Кнопка и диалог -->
     <button id="openDialog" type="button">Написать нам</button>
-    
-    <dialog id="contactDialog" aria-labelledby="dialogTitle"> 
-        <h2 id="dialogTitle">Обратная связь</h2> 
-        <form id="contactForm" method="dialog" novalidate> 
-            <label for="name">Имя</label> 
-            <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name"> 
-            
-            <label for="email">E-mail</label> 
-            <input id="email" name="email" type="email" required autocomplete="email"> 
-            
-            <label for="phone">Телефон</label> 
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" 
-                aria-describedby="phoneHelp" placeholder="8XXXXXXXXXX" 
-                required pattern="^\8\d{3}\d{3}\d{2}\d{2}$">  
+
+    <dialog id="contactDialog" aria-labelledby="dialogTitle">
+        <h2 id="dialogTitle">Обратная связь</h2>
+        <form id="contactForm" method="dialog" novalidate>
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp"
+                placeholder="8XXXXXXXXXX" required pattern="^\8\d{3}\d{3}\d{2}\d{2}$">
             <small id="phoneHelp">Формат: 89123456789</small>
-            
-            <label for="date">Дата</label> 
-            <input id="date" name="date" type="date"> 
-            
-            <label for="topic">Тема</label> 
-            <select id="topic" name="topic" required> 
-                <option value="">Выберите тему</option> 
-                <option value="question">Вопрос о бале</option> 
-                <option value="participation">Участие в бале</option> 
-                <option value="volunteer">Волонтерство</option> 
-            </select> 
-            
-            <label for="message">Сообщение</label> 
-            <textarea id="message" name="message" rows="4" required></textarea> 
-            
-            <div class="form-actions"> 
-                <button type="button" id="closeDialog">Закрыть</button> 
-                <button type="submit">Отправить</button> 
-            </div> 
-        </form> 
+
+            <label for="date">Дата</label>
+            <input id="date" name="date" type="date">
+
+            <label for="topic">Тема</label>
+            <select id="topic" name="topic" required>
+                <option value="">Выберите тему</option>
+                <option value="question">Вопрос о бале</option>
+                <option value="participation">Участие в бале</option>
+                <option value="volunteer">Волонтерство</option>
+            </select>
+
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="form-actions">
+                <button type="button" id="closeDialog">Закрыть</button>
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
     </dialog>
 
-<script>
-// Базовая логика для диалогового окна
-document.addEventListener('DOMContentLoaded', function() {
-    const dialog = document.getElementById('contactDialog');
-    const openButton = document.getElementById('openDialog');
-    const closeButton = document.getElementById('closeDialog');
-    const form = document.getElementById('contactForm');
+    <script>
+        // Базовая логика для диалогового окна
+        document.addEventListener('DOMContentLoaded', function () {
+            const dialog = document.getElementById('contactDialog');
+            const openButton = document.getElementById('openDialog');
+            const closeButton = document.getElementById('closeDialog');
+            const form = document.getElementById('contactForm');
 
-    openButton.addEventListener('click', () => {
-        dialog.showModal();
-    });
+            openButton.addEventListener('click', () => {
+                dialog.showModal();
+            });
 
-    closeButton.addEventListener('click', () => {
-        dialog.close();
-    });
+            closeButton.addEventListener('click', () => {
+                dialog.close();
+            });
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Проверка валидности формы
-        if (form.checkValidity()) {
-            alert('Форма отправлена!');
-            form.reset();
-            dialog.close();
-        } else {
-            // Показываем сообщения об ошибках
-            form.reportValidity();
-        }
-    });
-});
-</script>
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Проверка валидности формы
+                if (form.checkValidity()) {
+                    alert('Форма отправлена!');
+                    form.reset();
+                    dialog.close();
+                } else {
+                    // Показываем сообщения об ошибках
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
